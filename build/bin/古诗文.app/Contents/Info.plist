@@ -1,0 +1,47 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleName</key>
+        <string>古诗文</string>
+        <key>CFBundleExecutable</key>
+        <string>古诗文</string>
+        <key>CFBundleIdentifier</key>
+        <string>com.wails.古诗文</string>
+        <key>CFBundleVersion</key>
+        <string>1.0.0</string>
+        <key>CFBundleGetInfoString</key>
+        <string>Built using Wails (https://wails.io)</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.0.0</string>
+        <key>CFBundleIconFile</key>
+        <string>appicon</string>
+        <key>LSMinimumSystemVersion</key>
+        <string>10.13.0</string>
+        <key>NSHighResolutionCapable</key>
+        <string>true</string>
+        <key>NSHumanReadableCopyright</key>
+        <string>Copyright.........</string>
+        
+        <key>CFBundleDocumentTypes</key>
+        <array>
+          
+          <dict>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+              <string>png</string>
+            </array>
+            <key>CFBundleTypeName</key>
+            <string>PNG</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleTypeIconFile</key>
+            <string>appicon</string>
+          </dict>
+          
+        </array>
+        
+        
+    </dict>
+</plist>

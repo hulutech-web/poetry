@@ -1,0 +1,38 @@
+{
+  "name": "古诗文",
+  "outputfilename": "古诗文APP",
+  "assetdir": "frontend/dist",
+  "frontend:install": "npm install",
+
+  "frontend:build": "npm run build",
+  "frontend:dev:build": "npm run build-only",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "debounceMS": 500,
+  "author": {
+    "name": "袁浩",
+    "email": "yuanhaozhuzhu@hotmail.com"
+  },
+  "build": {
+    "darwin": {
+      "resources": [
+        {
+          "file": "assets/appicon.icns",
+          "target": "icons"
+        }
+      ]
+    }
+  },
+  "info": {
+    "fileAssociations": [
+      {
+        "ext": "png",
+        "name": "PNG",
+        "description": "File",
+        "iconName": "appicon",
+        "role": "Editor"
+      }
+    ]
+  }
+
+}

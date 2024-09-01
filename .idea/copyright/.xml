@@ -1,0 +1,6 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="Copyright (c) &amp;#36;originalComment.match(&quot;Copyright \(c\) (\d+)&quot;, 1, &quot;-&quot;, &quot;&amp;#36;today.year&quot;)&amp;#36;today.year. &#10;- 小程序开发，抖音小程序，微信小程序，公众号，网站，管理系统.&#10;- 桌面应用开发.&#10;- 爬虫开发，工具：短视频，行业数据.&#10;- 脚本开发，游戏，平台APP.&#10;- 抖音运营，公众号运营，&#10;期待您的合作. " />
+    <option name="myName" value="达州葫芦科技" />
+  </copyright>
+</component>
