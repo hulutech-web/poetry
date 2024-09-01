@@ -1,4 +1,5 @@
 ### 一款古诗文应用
+
 <p align="center">
   <img src="https://github.com/hulutech-web/poetry/blob/master/images/cover1.png?raw=true" width="300" />
   <img src="https://github.com/hulutech-web/poetry/blob/master/images/cover2.png?raw=true" width="300" />
@@ -7,6 +8,7 @@
   <img src="https://github.com/hulutech-web/poetry/blob/master/images/cover5.png?raw=true" width="300" />
   <img src="https://github.com/hulutech-web/poetry/blob/master/images/cover6.png?raw=true" width="300" />
 </p>
+
 #### 1.1 项目介绍
 古诗文应用是一款基于wails的跨平台桌面应用。  
 - 支持windows,mac 
