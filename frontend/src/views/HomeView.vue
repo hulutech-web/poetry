@@ -14,14 +14,22 @@ const poetry = ref<main.Feather>({
 const speakTxt = () => {
   // 一边播放背景音乐，一边播放语音
   // 1、播放背景音效
-  const audio = new window.Audio('/assets/voice/bgm.mp3');
-  audio.loop = true; // 循环播放
+  // 随机数1-6
+  let randomNum = Math.floor(Math.random() * 6) + 1;
+  let src = `audio${randomNum}.mp3`;
+  let audio = new Audio(src);
+  // 设置音效的音量
+  audio.volume = 0.5;
+  audio.loop = false; // 循环播放
   audio.play().catch(error => {
     console.error('播放背景音乐时出错:', error);
   });
+  audio.addEventListener('ended', function () {
+    console.log('背景音乐播放结束');
+  })
   // 2、播放语音
   // 创建一个 SpeechSynthesisUtterance 对象
-  const words = poetry.value.content;
+  const words = "出自"+poetry.value.origin+"..."+"作者"+poetry.value.author+"..."+poetry.value.content;
   let utterance = new SpeechSynthesisUtterance(words);
 
   // 设置语音属性
@@ -46,18 +54,18 @@ const speakTxt = () => {
       if (anyChineseVoice) {
         utterance.voice = anyChineseVoice;
         // 设置语音速度
-        utterance.rate = 0.8; // 正常速度
+        utterance.rate = 0.6; // 正常速度
 
         // 设置音调
-        utterance.pitch = 0.8; // 正常音调
+        utterance.pitch = 0.6; // 正常音调
         console.warn('没有找到男声，使用默认的中文语音。');
       } else {
         utterance.voice = voices[0]; // 使用第一个语音
         // 设置语音速度
-        utterance.rate = 0.8; // 正常速度
+        utterance.rate = 0.6; // 正常速度
 
         // 设置音调
-        utterance.pitch = 0.8; // 正常音调
+        utterance.pitch = 0.6; // 正常音调
         console.warn('没有找到中文语音，使用第一个可用语音。');
       }
     }
@@ -74,16 +82,20 @@ const speakTxt = () => {
   }
 
   // 设置语音速度
-  utterance.rate = 0.8; // 正常速度
+  utterance.rate = 0.6; // 正常速度
 
   // 设置音调
-  utterance.pitch = 0.8; // 正常音调
+  utterance.pitch = 0.6; // 正常音调
 
   // 设置语音结束后的回调函数
-  utterance.onend = function (event) {
+  utterance.onend = (event) => {
     console.log('语音播放结束');
+    if(audio){
+      audio.pause(); // 暂停背景音乐
+    }
   };
 };
+
 const loadFeather = () => {
   let loadedPoetry = new main.Feather();
   GetFeather().then((result: main.Feather) => {
@@ -162,11 +174,12 @@ loadFeather();
 </template>
 
 <style lang="scss">
-.drag-view{
+.drag-view {
   -webkit-app-region: drag;
   height: 40px; /* 你可以调整这个高度 */
   background-color: transparent; /* 保持透明或设置背景颜色 */
 }
+
 .home {
   height: 100vh;
   -webkit-user-select: none; /*webkit浏览器*/
