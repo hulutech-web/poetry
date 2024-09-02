@@ -29,7 +29,7 @@ const speakTxt = () => {
   })
   // 2、播放语音
   // 创建一个 SpeechSynthesisUtterance 对象
-  const words = "出自"+poetry.value.origin+"..."+"作者"+poetry.value.author+"..."+poetry.value.content;
+  const words = poetry.value.origin+"..."+"作者"+poetry.value.author+"..."+poetry.value.content;
   let utterance = new SpeechSynthesisUtterance(words);
 
   // 设置语音属性
